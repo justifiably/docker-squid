@@ -1,0 +1,14 @@
+squid:
+  container_name: "squid"
+  restart: unless-stopped
+  image: justifiably/squid
+  environment:
+    - PUID=3128
+    - PGID=3128
+    - SQUIDARGS=-NYCd 5
+  ports:
+    - 3128:3128
+#  volumes:
+#    - /cache/squid/conf:/etc/squid
+#    - /cache/squid/cache:/var/cache/squid
+#    - /cache/squid/logs:/var/log/squid
